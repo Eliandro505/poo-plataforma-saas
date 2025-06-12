@@ -11,6 +11,13 @@ public abstract class Servico {
     public abstract double calcularCusto(int horas);
     public abstract String gerarRelatorio();
 
+    public Servico(String nome, double custoHora, boolean status, Ambiente ambiente) {
+        this.nome = nome;
+        this.custoHora = custoHora;
+        this.status = status;
+        this.ambiente = ambiente;
+    }
+
     public void ativar() {
         this.status = true;
     }
