@@ -1,4 +1,7 @@
 package enums;
 
-public class Ambiente {
+public enum Ambiente {
+    DEV,
+    HOMOLOG,
+    PROD
 }
