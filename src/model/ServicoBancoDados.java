@@ -20,6 +20,7 @@ public class ServicoBancoDados extends Servico {
     @Override
     public String gerarRelatorio() {
         StringBuilder builder = new StringBuilder();
+        builder.append("Relatório do Serviço de Banco de Dados\n");
         builder.append("Tipo de banco utilizado: ");
         builder.append(tipoBanco);
         builder.append("\nNúmero máximo de conexões: ");

@@ -20,6 +20,7 @@ public class ServicoComputacao extends Servico {
     @Override
     public String gerarRelatorio() {
         StringBuilder builder = new StringBuilder();
+        builder.append("Relatório do Serviço de Computação\n");
         builder.append("Quantidade de gigas no sistema: ");
         builder.append(qntdCPUs);
         builder.append("\nTipo de instancia do sistema: ");

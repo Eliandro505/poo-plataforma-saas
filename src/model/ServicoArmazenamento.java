@@ -20,6 +20,7 @@ public class ServicoArmazenamento extends Servico {
     @Override
     public String gerarRelatorio() {
         StringBuilder builder = new StringBuilder();
+        builder.append("Relatório do Serviço de Armazenamento\n");
         builder.append("Custo total pelos gigas: ");
         builder.append(1.5 * capacidadeGB);
         builder.append("\nRedundância do sistema: ");
