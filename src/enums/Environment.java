@@ -1,6 +1,6 @@
 package enums;
 
-public enum Ambiente {
+public enum Environment {
     DEV,
     HOMOLOG,
     PROD
