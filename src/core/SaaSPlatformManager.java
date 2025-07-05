@@ -1,46 +1,44 @@
 package core;
 
+import linkedlist.LinkedList;
 import model.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class SaaSPlatformManager {
-    private List<Service> serviceList;
+    private final LinkedList<Service> serviceList;
 
     public SaaSPlatformManager() {
-        this.serviceList = new ArrayList<>();
+        this.serviceList = new LinkedList<>();
     }
 
     public void addService(Service service) {
-        serviceList.add(service);
+        serviceList.addFirst(service);
     }
 
     public void activateAllServices() {
-        for(Service service : serviceList) {
-            service.activate();
+        for (int i = 0; i < serviceList.size(); i++) {
+            serviceList.get(i).activate();
         }
     }
 
     public double totalCostOfActiveServices(int hours) {
         double totalCost = 0;
-        for(Service service : serviceList) {
-            if(service.isActive()) totalCost += service.calculateCost(hours);
+        for (int i = 0; i < serviceList.size(); i++) {
+            if(serviceList.get(i).isActive()) totalCost += serviceList.get(i).calculateCost(hours);
         }
         return totalCost;
     }
 
     public void generateIndividualReports() {
-        for(Service service : serviceList) {
-            System.out.println(service.generateReport());
+        for (int i = 0; i < serviceList.size(); i++) {
+            System.out.println(serviceList.get(i).generateReport());
             System.out.println("\n===============================\n");
         }
     }
 
     public void listServices() {
-        for (Service service : serviceList) {
-            String status = service.isActive() ? "Active" : "Inactive";
-            System.out.println(service.getName() + " - " + status);
+        for (int i = 0; i < serviceList.size(); i++) {
+            String status = serviceList.get(i).isActive() ? "Active" : "Inactive";
+            System.out.println(serviceList.get(i).getName() + " - " + status);
         }
     }
 }
